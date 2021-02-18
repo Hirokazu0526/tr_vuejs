@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sana+JP:400|Roboto:400,700&display=swap");
+
+body {
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  letter-spacing: 1.5;
+  color: #000;
+  background: white;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+#wrapper {
+  padding: 30px 0;
+  margin: 30px 30px;
+  border-top: 7px solid #e6e6e6;
+  border-bottom: 7px solid #e6e6e6;
+}
+
+#wrapper h2 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+}
+
+/*ハンバーガーメニューを作ろう*/
+#header {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 40px;
+  background: #e6e6e6;
+}
+
+.breadcrumb-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 20px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 20%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.breadcrumb-decoration {
+  display: block;
+  content: "";
+  margin: 0 auto;
+  width: 18px;
+  height: 2px;
+  background: black;
+}
+
+.breadcrumb-decoration:nth-child(2) {
+  margin: 4px auto;
+}
+
+.breadcrumb-menu {
+  position: absolute;
+  top: 0;
+  transform: translateX(0);
+  width: 300px;
+  height: 100vh;
+  background: #d5d5d5;
+  z-index: 10;
+}
+
+.breadcrumb-menu header {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 40px;
+  padding-bottom: 10px;
+}
+
+.breadcrumb-menu #list {
+  margin: 0;
+  padding-bottom: 0 40px;
+  list-style: none;
+}
+
+.breadcrumb-menu #list .item {
+  margin-bottom: 15px;
+}
+
+.breadcrumb-menu #list .item a {
+  text-decoration: none;
+  color: black;
+}
+
+/*スライドビューを作ろう*/
+.swiper-container {
+  width: 100%;
+  height: 400px;
+  margin: 30px 0 0 0;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.5em;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  overflow-x: hidden;
+}
+
+/*タブを作ろう*/
+#tab {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0;
+  margin: 15px 0 0 0;
+  position: relative;
+}
+
+#tab:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #e6e6e6;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+}
+
+#tab .tab-list {
+  margin: 0 10px;
+}
+
+#tab .tab-list.-active button {
+  border-bottom: 7px solid #50bdd8;
+}
+
+#tab button {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 20px 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#content {
+  display: flex;
+  width: 100%;
+  margin: 30px 0 0 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(100%);
+}
+
+/*モーダルを作ろう*/
+#modal-open-btn {
+  width: 200px;
+  margin: 30px 0 0 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#modal {
+  position: relative;
+  width: 50%;
+  background: white;
+}
+
+#modal-close-btn {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+#modal #modal-content {
+  min-height: 150px;
+  padding: 40px 30px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 0 30px;
+  }
+
+  .swiper-container {
+    margin: 50px auto 0;
+  }
+
+  #wrapper {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px 0;
+  }
+
+  #wrapper h2 {
+    font-size: 40px;
+  }
+
+  #tab .tab-list {
+    margin: 0 30px;
+  }
+
+  #content {
+    max-width: 500px;
+    min-height: 100px;
+    margin: 50px auto 0;
+  }
+
+  #modal-open-btn {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    margin: 50px auto 0;
+    line-height: 30px;
+    padding: 0;
+    border: none;
+    background: #1aaed3;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
